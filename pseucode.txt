@@ -1,0 +1,40 @@
+function getComputerChoice:
+declare array that contains "paper","rock","scissors"
+get random index from array choices
+return random choices
+
+function getHumanChoice:
+declare array that contains any possible choices
+get input from user
+match input and array
+True, return input
+else print "Error" on console
+
+function playRound with humanChoice and computerChoice args:
+match humanChoice("paper") AND computerChoice("scissors")
+true, print "computer win" and return 0
+match humanChoice("rock") AND computerChoice("paper")
+true, print "computer win" and return 0
+match humanChoice("scissors") AND computerChoice("rock")
+true, print "computer win" and return 0
+match humanChoice == computerChoice
+true, print "draw" and return 2
+else, print "human win" and return 1
+
+function playGame :
+declare variable computerScore and humanScore
+loop for 5 times:
+    execute playRound function with getHumanChoice and getComputerChoice as args that store in result variable
+    match result is 0, increment computerScore
+    match result is 1, increment humanScore
+match computerScore > humanScore
+    alert "computer win!"
+match computerScore < humanScore
+    alert "human win!"
+else alert "draw"
+
+
+main :
+execute playgame function
+
+
